@@ -1,11 +1,14 @@
 package com.hello.world.spring;
 
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.hello.world.beans.AppConfig;
 import com.hello.world.beans.AppConfig2;
 import com.hello.world.beans.Mundo;
+import com.hello.world.beans.Persona;
 
 public class App {
 
@@ -18,9 +21,19 @@ public class App {
 		
 		Mundo m  =  (Mundo) appContext.getBean("marte");
 		
+		System.out.println("Configuracion por anotaciones");
 		System.out.println(m.getSaludo());
 		
 		((ConfigurableApplicationContext) appContext).close();
+		
+		ApplicationContext appContext2 = new ClassPathXmlApplicationContext("com/hello/world/xml/beans.xml");
+		Persona per = (Persona) appContext2.getBean("persona");
+		
+		System.out.println("Configuracion por XML y enviando valores de contructor al beans.xml");
+		System.out.println("Id: "+per.getId()+" nombre:"+per.getNombre()+" apodo:"+per.getApodo());
+		
+		((ConfigurableApplicationContext) appContext2).close();
+		
 	}
 
 }
