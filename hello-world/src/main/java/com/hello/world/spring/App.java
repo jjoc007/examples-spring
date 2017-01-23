@@ -31,7 +31,7 @@ public class App {
 		Persona per = (Persona) appContext2.getBean("persona");
 		
 		System.out.println("Configuracion por XML y enviando valores de contructor al beans.xml");
-		System.out.println("Id: "+per.getId()+" nombre:"+per.getNombre()+" apodo:"+per.getApodo() + " pais: "+per.getPais().getNombre());
+		System.out.println("Id: "+per.getId()+" nombre:"+per.getNombre()+" apodo:"+per.getApodo() + " pais: "+per.getPais().getNombre()+"ciudad pr:"+per.getCiudad().getNombre());
 		
 		String ciudades = "";
 		for(Ciudad c : per.getPais().getCiudades()){
