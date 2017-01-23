@@ -29,16 +29,16 @@ public class App {
 		
 		ApplicationContext appContext2 = new ClassPathXmlApplicationContext("com/hello/world/xml/beans.xml");
 		Persona per = (Persona) appContext2.getBean("persona");
+		Persona per2 = (Persona) appContext2.getBean("persona");
 		
 		System.out.println("Configuracion por XML y enviando valores de contructor al beans.xml");
 		System.out.println("Id: "+per.getId()+" nombre:"+per.getNombre()+" apodo:"+per.getApodo() + " pais: "+per.getPais().getNombre()+"ciudad pr:"+per.getCiudad().getNombre());
+		System.out.println("Id: "+per2.getId()+" nombre:"+per2.getNombre()+" apodo:"+per2.getApodo() + " pais: "+per2.getPais().getNombre()+"ciudad pr:"+per2.getCiudad().getNombre());
 		
-		String ciudades = "";
-		for(Ciudad c : per.getPais().getCiudades()){
-			ciudades += " "+c.getNombre();
-		}
+		System.out.println(per);
+		System.out.println(per2);
 		
-		System.out.println("Ciudades:" +ciudades);
+		
 		
 		
 		((ConfigurableApplicationContext) appContext2).close();
