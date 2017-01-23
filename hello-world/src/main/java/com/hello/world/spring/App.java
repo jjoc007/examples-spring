@@ -7,6 +7,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.hello.world.beans.AppConfig;
 import com.hello.world.beans.AppConfig2;
+import com.hello.world.beans.Ciudad;
 import com.hello.world.beans.Mundo;
 import com.hello.world.beans.Persona;
 
@@ -30,7 +31,15 @@ public class App {
 		Persona per = (Persona) appContext2.getBean("persona");
 		
 		System.out.println("Configuracion por XML y enviando valores de contructor al beans.xml");
-		System.out.println("Id: "+per.getId()+" nombre:"+per.getNombre()+" apodo:"+per.getApodo() + " pais: "+per.getPais().getNombre()+" ciudad: "+per.getPais().getCiudad().getNombre());
+		System.out.println("Id: "+per.getId()+" nombre:"+per.getNombre()+" apodo:"+per.getApodo() + " pais: "+per.getPais().getNombre());
+		
+		String ciudades = "";
+		for(Ciudad c : per.getPais().getCiudades()){
+			ciudades += " "+c.getNombre();
+		}
+		
+		System.out.println("Ciudades:" +ciudades);
+		
 		
 		((ConfigurableApplicationContext) appContext2).close();
 		
