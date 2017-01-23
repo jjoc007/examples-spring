@@ -7,7 +7,6 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.hello.world.beans.AppConfig;
 import com.hello.world.beans.AppConfig2;
-import com.hello.world.beans.Ciudad;
 import com.hello.world.beans.Mundo;
 import com.hello.world.beans.Persona;
 

@@ -9,6 +9,14 @@ public class Persona {
 	private Pais pais;
 	private Ciudad ciudad;
 	
+	private void init(){
+		System.out.println("antes de inicializar el bean");
+	}
+	
+	private void destroy(){
+		System.out.println("antes de destruir el bean");
+	}
+	
 	public Persona(int id, String nombre, String apodo) {
 		super();
 		this.id = id;

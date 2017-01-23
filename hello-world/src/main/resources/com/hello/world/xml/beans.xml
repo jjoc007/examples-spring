@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+	default-init-method="init"
+	default-destroy-method="destroy">
 	
 	<bean id = "mundo" class="com.hello.world.beans.Mundo" >
 		<property name="saludo" value="Hola mundo"></property>
 	</bean>
-	<bean id = "persona" class="com.hello.world.beans.Persona" autowire="byName" scope="prototype" >
+	<bean id = "persona" class="com.hello.world.beans.Persona" autowire="byName" >
 		<constructor-arg type="int" index="0" value="1"></constructor-arg>
 		<constructor-arg type="String" index="1" value="juan"></constructor-arg>
 		<constructor-arg type="String" index="2" value="jjoc007"></constructor-arg>
