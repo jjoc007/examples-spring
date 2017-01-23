@@ -6,7 +6,7 @@ import javax.annotation.PreDestroy;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 
-public class Persona implements InitializingBean, DisposableBean{
+public class Persona {
 
 	private int id;
 	private String nombre;
@@ -63,16 +63,5 @@ public class Persona implements InitializingBean, DisposableBean{
 		this.ciudad = ciudad;
 	}
 
-	public void afterPropertiesSet() throws Exception {
-		// TODO Auto-generated method stub
-		System.out.println("antes de inicializar el bean");
-		
-	}
-
-	public void destroy() throws Exception {
-		// TODO Auto-generated method stub
-		System.out.println("antes de destruir el bean");
-		
-	}
-
+	
 }
