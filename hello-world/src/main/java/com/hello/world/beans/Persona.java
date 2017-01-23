@@ -6,6 +6,8 @@ public class Persona {
 	private String nombre;
 	private String apodo;
 	
+	private Pais pais;
+	
 	public Persona(int id, String nombre, String apodo) {
 		super();
 		this.id = id;
@@ -36,7 +38,13 @@ public class Persona {
 	public void setApodo(String apodo) {
 		this.apodo = apodo;
 	}
-	
-	
+
+	public Pais getPais() {
+		return pais;
+	}
+
+	public void setPais(Pais pais) {
+		this.pais = pais;
+	}
 	
 }

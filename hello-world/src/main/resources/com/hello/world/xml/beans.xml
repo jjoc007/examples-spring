@@ -10,6 +10,16 @@
 		<constructor-arg type="int" index="0" value="1"></constructor-arg>
 		<constructor-arg type="String" index="1" value="juan"></constructor-arg>
 		<constructor-arg type="String" index="2" value="jjoc007"></constructor-arg>
+		<property name="pais" ref="pais"></property>
+	</bean>
+	
+	<bean id = "pais" class="com.hello.world.beans.Pais" >
+		<property name="nombre" value="peru"></property>
+		<property name="ciudad" ref="ciudad"></property>
+	</bean>
+	
+	<bean id = "ciudad" class="com.hello.world.beans.Ciudad" >
+		<property name="nombre" value="bogota"></property>
 	</bean>
 
 </beans>
